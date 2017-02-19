@@ -1,0 +1,49 @@
+<div ng-init="index()">
+<div class="pull-right" style="margin-right:70px;margin-bottom:20px;">
+	<form class="form-inline">
+		<div class="form-group">
+			<label for="name">Search: </label>
+			<input type="text" class="form-control" ng-model="search" placeholder="Search members here ...">
+		</div>
+	</form>
+</div>
+<div class="col-md-10 col-md-offset-1">
+	<table class="table table-hover" style="margin-left:40px;">
+		<thead>
+			<th>#</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Phone number</th>
+			<th>Option</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td>
+					<input type="text" class="form-control" ng-model="name" placeholder="Fill your name here ...">
+				</td>
+				<td>
+					<input type="text" class="form-control" ng-model="address" placeholder="Fill your address here ...">
+				</td>
+				<td>
+					<input type="text" class="form-control" ng-model="phone" placeholder="Fill your phone here ...">
+				</td>
+				<td>
+					<button ng-if="btnedit" class="btn btn-warning" ng-click="save()">Save</button>
+					<button ng-disabled="!btnadd" class="btn btn-success" ng-click="add()">Add</button>
+				</td>
+			</tr>
+			<tr ng-repeat="member in members">
+				<td>{{ $index + 1 }}</td>
+				<td style="padding-left: 20px;">{{ member.name }}</td>
+				<td style="padding-left: 20px;">{{ member.address }}</td>
+				<td style="padding-left: 20px;">{{ member.phone }}</td>
+				<td>
+					<button class="btn btn-primary" ng-click="edit(member.id)">Edit</button>
+					<button class="btn btn-danger" ng-click="remove(member)">Delete</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div>

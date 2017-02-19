@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Seminar">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title ng-bind="$state.current.data.pageTitle + ' | Seminar Angular 1'"></title>
+	<link rel="stylesheet" type="text/css" href="library/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="library/toaster.css">
+	<style type="text/css">
+		.column {
+			height:400px;
+			border-right: 3px solid #000;
+		}
+		.colorred{
+			color:red;
+		}
+		.break {
+			word-wrap: break-word;
+			margin-top: 10px;
+		}
+		.login-form input.ng-invalid.ng-touched{
+		  	border-color: #f00;
+		}
+		.login-form input.ng-valid.ng-touched{
+		  	border-color: none;
+		}
+		.error{
+		  	color:#f00;
+		  	padding-left:15px;
+		  	padding-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#/home">Seminar Angular 1</a>
+			<ul class="nav navbar-nav">
+				<li ng-class="{ active: isActive('/home') }"><a href="#/home">Home</a></li>
+				<li ng-class="{ active: isActive('/validation') }"><a href="#/validation">Form Validation</a></li>
+				<li ng-class="{ active: isActive('/crud') }"><a href="#/crud">CRUD Example</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right" ng-if="!rootAuth">
+				<li><a href="#/login">Login</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right" ng-if="rootAuth">
+				<li><a>{{rootAuth.email}}</a></li>
+				<li><a href="javascript:void(0)" ng-click="logout()">Logout</a></li>
+			</ul>
+		</div>
+	</nav><br><br>
+
+	<div class="container">
+		<div ui-view=""></div>
+	</div>
+	<toaster-container toaster-options="{'position-class': 'toast-bottom-right','close-button': true}"></toaster-container>
+
+	<script src="library/jquery.min.js" type="text/javascript"></script>
+	<script src="library/bootstrap.min.js" type="text/javascript"></script>
+	<script src="library/angular.min.js" type="text/javascript"></script>
+	<script src="library/angular-ui-router.min.js" type="text/javascript"></script>
+	<script src="library/angular-sanitize.min.js" type="text/javascript"></script>
+	<script src="library/angular-cookies.min.js" type="text/javascript"></script>
+	<script src="library/toaster.js" type="text/javascript"></script>
+
+	<script src="app/app.js" type="text/javascript"></script>
+	<script src="app/routes.js" type="text/javascript"></script>
+	<script src="app/directives.js" type="text/javascript"></script>
+
+	<script src="app/factories/ToastFactory.js" type="text/javascript"></script>
+	<script src="app/services/LoginService.js" type="text/javascript"></script>
+	
+	<script src="app/controllers/LoginController.js" type="text/javascript"></script>
+	<script src="app/controllers/HomeController.js" type="text/javascript"></script>
+	<script src="app/controllers/ValidationController.js" type="text/javascript"></script>
+	<script src="app/controllers/CrudController.js" type="text/javascript"></script>
+
+</body>
+</html>
