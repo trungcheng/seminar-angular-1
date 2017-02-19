@@ -41,11 +41,12 @@
             <div ng-show="form.ucPass.$error.minlength" class="error">Confirm password must be at least 6 characters.</div>
             <div class="error" ng-show="form.ucPass.$error.required">Confirm password can not be blank.</div>
         </div>
-        <div ng-show="(form.uPass.$dirty && form.ucPass.$dirty) && (Credential.password != Credential.confirmpassword)">
+        <div ng-show="(Credential.password != Credential.confirmpassword)">
             <div class="error">Password must be equal.</div>
         </div>
     </div>
     <div style="margin-top:20px;margin-bottom:50px;">
+        <button type="reset" class="btn btn-default pull-right">Cancel</button>
         <button type="submit" class="btn btn-success pull-right">Submit</button>
     </div>
 </form>

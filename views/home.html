@@ -1,12 +1,12 @@
 <div class="col-md-12">
-	<div class="col-md-4 column">
-		<div class="col-md-11">
+	<div class="col-md-3 column">
+		<div class="col-md-12">
 			<h3>Data Binding Ways:</h3>
 			<h4 class="colorred">- One way binding - text:</h4>
 			<input class="form-control" type="text" ng-model="name" />
 			<p class="break">{{ name }}</p>
 			<h4 class="colorred">- One way binding - html:</h4>
-			<p ng-bind="myText"></p>
+			<p ng-bind-html="myText"></p>
 			<h4 class="colorred">- One time binding:</h4>
 			<input class="form-control" type="text" ng-model="onetime" /> 
 			<p>{{ ::onetime }}</p>
@@ -45,13 +45,18 @@
 		<h4 class="colorred">- $timeout</h4>
 		<h4 class="colorred">- $window</h4>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		<h3>Functions: </h3>
 		<h4 class="colorred">- angular.forEach</h4>
 		<h4 class="colorred">- angular.copy</h4>
 		<h4 class="colorred">- angular.equals</h4>
+		<h4 class="colorred">- angular.merge</h4>
 		<h4 class="colorred">- angular.isNumber</h4>
 		<h4 class="colorred">- angular.isObject</h4>
 		<h4 class="colorred">- angular.isString</h4>
+		<h4 class="colorred">- angular.isArray</h4>
+		<h4 class="colorred">- angular.isUndefined</h4>
+		<h4 class="colorred">- angular.isFunction</h4>
+		<h4 class="colorred">- angular.isDate</h4>
 	</div>
 </div>

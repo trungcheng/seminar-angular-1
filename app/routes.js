@@ -33,6 +33,13 @@ angular.module('Seminar').config(function($stateProvider, $urlRouterProvider) {
                 pageTitle: 'CRUD Example'
             }
         })
+        .state('directive', {
+            url: "/directive",
+            templateUrl: "/views/directive.html",
+            data: {
+                pageTitle: 'Custom directive'
+            }
+        })
 });
 
 app.constant('API_GET', 'api/members');
