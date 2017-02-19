@@ -4,7 +4,7 @@ angular.module('Seminar')
 	return {
 		restrict: 'A',
 		link: function (scope, ele, attrs) {
-			element.bind('click', function () {
+			ele.bind('click', function () {
 				alert('day la demo 1');
 			})
 		}
@@ -16,15 +16,15 @@ angular.module('Seminar')
 		restrict: 'A',
 		template: '<h2>Click or hover here to change color</h2>',
 		link: function (scope, ele, attrs) {
-            element.on('mouseenter', function () {
-                element.css('color', 'red');
+            ele.on('mouseenter', function () {
+                ele.css('color', 'red');
             });
-            element.on('mouseleave', function () {
-                element.css('color', 'orange');
+            ele.on('mouseleave', function () {
+                ele.css('color', 'orange');
             });
-            element.bind('click', function () {
-            	element.css('color', 'black');
-            })
+            ele.bind('click', function () {
+            	ele.css('color', 'black');
+            });
 		}
 	}
 })
@@ -32,12 +32,13 @@ angular.module('Seminar')
 .directive('demo3', function () {
 	return {
         restrict: 'E',
-        template: '<button class="btn btn-success">{{message}}</button>',
-        link: function (scope, ele, attrs) {
-        	scope.message = 'ahihi';
-        	ele.bind('click', function () {
-        		ele.attr('disabled', true);
-        	});
+        replace: true,
+        template: '<button class="btn btn-success">{{ text }}</button>',
+        link: function(scope, ele, attrs) {
+        	scope.text = 'Ahihi';
+            ele.bind('click', function() {
+                ele.attr('disabled', true);
+            });
         }
-    }
+    };
 })
